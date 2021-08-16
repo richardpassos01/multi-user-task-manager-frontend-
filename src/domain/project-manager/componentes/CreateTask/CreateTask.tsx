@@ -30,7 +30,7 @@ const CreateTask: React.FunctionComponent<Props> = ({ projectId, refetch }) => {
     onSubmit: async (data: Task) => {
       setIsLoading(true);
       try {
-        const task = await createTask(data);
+        await createTask(data);
         setIsLoading(false);
         refetch();
       } catch (error) {

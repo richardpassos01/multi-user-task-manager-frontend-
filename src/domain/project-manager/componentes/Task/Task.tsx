@@ -11,12 +11,11 @@ interface Prop {
 }
 
 const Task: React.FunctionComponent<Prop> = ({ task, refetch }) => {
-  const [checkedBox, setCheckedBox] = React.useState(false);
+  const [checkedBox] = React.useState(false);
   const { removeTask, completeTask } = useProjectManager();
 
   const finishTask = async () => {
-    setCheckedBox(true);
-    completeTask(task.id, task.projectId);
+    await completeTask(task.id, task.projectId);
     refetch();
   };
 

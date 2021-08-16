@@ -13,7 +13,7 @@ import Loader from "@components/Loader";
 import Task from "@domain/project-manager/componentes/Task/Task";
 
 const Dashboard: React.FunctionComponent = () => {
-  const [{ data: projects, loading, error }, refetch] = useAxios(
+  const [{ data: projects, loading }, refetch] = useAxios(
     ENDPOINTS.LIST_PROJECTS_AND_TASKS
   );
 
@@ -59,6 +59,8 @@ const Dashboard: React.FunctionComponent = () => {
                               <Task task={task} refetch={refetch} />
                             </Box>
                           );
+                        } else {
+                          return <div></div>
                         }
                       })}
                     </Flex>
@@ -74,6 +76,8 @@ const Dashboard: React.FunctionComponent = () => {
                               <Task task={task} refetch={refetch} />
                             </Box>
                           );
+                        } else {
+                          return <div></div>
                         }
                       })}
                     </Flex>
