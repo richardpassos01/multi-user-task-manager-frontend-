@@ -50,9 +50,11 @@ const Task: React.FunctionComponent<Prop> = ({ task, refetch }) => {
           </>
         )}
         {task.completedAt && (
-          <span style={{ color: theme.primary.black }}>{`${new Date(
-            task.completedAt
-          ).getDate()}-${new Date(task.completedAt).getFullYear()}`}</span>
+          <span style={{ color: theme.primary.black }}>
+            {new Date(task.completedAt).getFullYear()}-
+            {new Date(task.completedAt).getMonth()}-
+            {new Date(task.completedAt).getDate()}
+          </span>
         )}
       </Flex>
     </>
